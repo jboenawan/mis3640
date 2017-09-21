@@ -1,10 +1,11 @@
-def fun1(a):
-    return a*a
+def diff21(n):
+    if n > 21:
+        return 2 * (n - 21)
+    else:
+        return 21 - n
 
-# print(fun1(1))
+def double(n):
+    return 2*n
 
-def fun2(b):
-    print('wrewrewqrqr')
-    return b + 1
-
-fun2(   fun1(2)   )
+print(diff21(21))
+print(double(diff21(30)))
