@@ -1,6 +1,10 @@
-import math
-def area(radius): #area is name, radius is parameter,
-    return radius**2*math.pi #return is the body of the function
+def fun1(a):
+    return a*a
 
+# print(fun1(1))
 
-print(area(6))
+def fun2(b):
+    print('wrewrewqrqr')
+    return b + 1
+
+fun2(   fun1(2)   )
