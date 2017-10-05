@@ -70,3 +70,48 @@ def find_words_no_vowels():
     return counter_no_vowel/counter_total
 
 print('The percentage of the words with vowel letters is {:.2f}%.'.format(find_words_no_vowels()*100))
+
+
+def uses_only(word, available):
+    """
+    takes a word and a string of letters, and that returns True if the word
+    contains only letters in the list.
+    """
+    for letter in word:
+        if letter not in available:
+            return False
+    return True
+
+print(uses_only('Babson', 'aBbsonxyz'))
+print(uses_only('college', 'aBbsonxyz'))
+
+
+def uses_all(word, required):
+    """
+    takes a word and a string of required letters, and that returns True if
+    the word uses all the required letters at least once.
+    """
+    # for letter in required:
+    #     if letter not in word:
+    #         return False
+    # return True
+    return uses_only(required, word)
+
+print(uses_all('Babson', 'abs'))
+print(uses_all('college', 'abs'))
+
+
+def is_abecedarian(word):
+    """
+    returns True if the letters in a word appear in alphabetical order
+    (double letters are ok).
+    """
+    before = word[0]
+    for letter in word:
+        if letter < before:
+            return False
+        before = letter
+    return True
+
+print(is_abecedarian('abs'))
+print(is_abecedarian('college'))
