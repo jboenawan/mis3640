@@ -19,7 +19,7 @@ def Sentiment_Analysis(text):
     #return the polarity score of the text
     return score
 
-text1 = 'This book is great'
+text1 = 'This book is disgusting'
 text2 = 'This is a great book'
 
 similarity = Similarity_Test(text1,text2)
