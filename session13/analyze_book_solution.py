@@ -111,20 +111,22 @@ def main():
     print('Number of different words:', different_words(hist))
 
     t = most_common(hist)
-    print('The most common words are:')
-    for freq, word in t[0:20]:
-        print(word, '\t', freq)
 
-    words = process_file('words.txt', skip_header=False)
+    print_most_common(hist, 20)
+    # print('The most common words are:')
+    # for freq, word in t[0:20]:
+    #     print(word, '\t', freq)
 
-    diff = subtract(hist, words)
-    print("The words in the book that aren't in the word list are:")
-    for word in diff.keys():
-        print(word, end=' ')
+    # words = process_file('words.txt', skip_header=False)
 
-    print("\n\nHere are some random words from the book")
-    for i in range(100):
-        print(random_word(hist), end=' ')
+    # diff = subtract(hist, words)
+    # print("The words in the book that aren't in the word list are:")
+    # for word in diff.keys():
+    #     print(word, end=' ')
+
+    # print("\n\nHere are some random words from the book")
+    # for i in range(100):
+    #     print(random_word(hist), end=' ')
 
 
 if __name__ == '__main__':

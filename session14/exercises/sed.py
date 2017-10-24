@@ -8,13 +8,20 @@ def sed(pattern, replace, source, dest):
     source: string filename
     dest: string filename
     """
-    pass
+    f_source = open(source)
+    f_dest = open(dest, 'w')
+    
+    for line in f_source:
+        new_line = line.replace(pattern, replace)
+        f_dest.write(new_line)
+
+    f_source.close()
+    f_dest.close()
 
 
-
-pattern = 'Hey Jude'
-replace = 'Hi Donald'
-source = 'sed_tester.txt'
+pattern = 'man'
+replace = 'woman'
+source = 'output.txt'
 dest = 'new_' + source
 sed(pattern, replace, source, dest)
 
