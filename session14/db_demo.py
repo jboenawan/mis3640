@@ -1,7 +1,7 @@
 import dbm
 import random
 
-roster = ('Istvan Bardi',
+ROSTER = ('Istvan Bardi',
             'Zachary Bedrosian',
             'Josephine Boenawan',
             'Gianca Devina',
