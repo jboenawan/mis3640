@@ -16,6 +16,8 @@ def print_point(p):
     print('(%g, %g)' % (p.x, p.y))
 
 
+
+
 def distance_between_points(p1, p2):
     """Computes the distance between two Point objects.
 
