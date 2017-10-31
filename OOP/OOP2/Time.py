@@ -194,5 +194,5 @@ def main():
     print_time(end_time)
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
