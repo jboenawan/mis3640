@@ -4,17 +4,17 @@ class Time:
     attributes: hour, minute, second
     """
 
-# time = Time()
-# time.hour = 1
-# time.minute = 50
-# time.second = 30
+time = Time()
+time.hour = 1
+time.minute = 50
+time.second = 30
 
 # print(time.hour, time.minute, time.second)
 
-# later = Time()
-# later.hour = time.hour
-# later.minute = time.minute + 5
-# later.second = time.second
+later = Time()
+later.hour = time.hour
+later.minute = time.minute + 5
+later.second = time.second
 
 # print(later.hour, later.minute, later.second)
 
@@ -28,6 +28,7 @@ def print_time(t):
 
     t: Time object
     """
+    print('{:02d}:{:0d}:{:02d}'.format(t.hour, t.minute, t.second))
 
 # print_time(time)
 # print_time(later)
@@ -35,6 +36,14 @@ def print_time(t):
 
 def is_after(t1, t2):
     """Returns True if t1 is after t2; false otherwise."""
+    # if t1.hour > t2.hour:
+    #     return True
+    # elif t1.hour < t2.hour:
+    #     return False
+    # elif t1.minute > t2.minute:
+    #     return True
+    # elif t
+    pass
 
 
 # print(is_after(time, later))
@@ -61,15 +70,15 @@ def add_time(t1, t2):
 
 # Uncomment below for testing
 
-# start = Time()
-# start.hour = 9
-# start.minute = 45
-# start.second = 0
+start = Time()
+start.hour = 9
+start.minute = 45
+start.second = 0
 
-# duration = Time()
-# duration.hour = 1
-# duration.minute = 35
-# duration.second = 0
+duration = Time()
+duration.hour = 1
+duration.minute = 35
+duration.second = 0
 
 # done = add_time(start, duration)
 # print_time(done)
@@ -120,12 +129,13 @@ def add_time2(t1, t2):
 
     returns: Time
     """
-    # assert valid_time(t1) and valid_time(t2)
+    assert valid_time(t1) and valid_time(t2)
     seconds = time_to_int(t1) + time_to_int(t2)
     return int_to_time(seconds)
 
 # done = add_time2(start, duration)
 # print_time(done)
+
 
 
 def valid_time(time):
@@ -154,6 +164,14 @@ def substract_time(t1, t2):
 
     returns: Time
     """
+    result = time_to_int(t1) - time_to_int(t2)
+    return int_to_time(result)
+
+# done = Time()
+# done.hour, done.minute, done.second = 14, 30, 30
+
+# duration = Time()
+# duration.hour, duration.minute, duration.second = 1, 40, 50
 
 # print_time(substract_time(done, duration))
 # print_time(substract_time(time, later))
@@ -165,11 +183,15 @@ def substract_time(t1, t2):
 
 def mul_time(t1, factor):
     """Multiplies a Time object by a factor."""
+    if not valid_time(t1):
+        raise ValueError('invalid Time object in mul_time, you idiot!')
+    result = time_to_int(t1) * factor
+    return int_to_time(result)
     
-
-# print_time(time)
+# duration.hour, duration.minute, duration.second = 1, 40, 80
+# print_time(duration)
 # print('after multiplied by 5:', end=' ')
-# print_time(mul_time(time, 5))
+# print_time(mul_time(duration, 5))
 
 
 def main():
@@ -194,5 +216,5 @@ def main():
     print_time(end_time)
 
 
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()
