@@ -85,30 +85,32 @@ def int_to_time(seconds):
 
 def main():
     start = Time(9, 45, 00)
-    start.print_time()
+    print(start)
+    print(start.time_to_int())
+    # start.print_time()
 
-    end = start.increment(1337)
-    # end = start.increment(1337, 460)
-    end.print_time()
+    # end = start.increment(1337)
+    # # end = start.increment(1337, 460)
+    # end.print_time()
 
-    print('Is end after start?')
-    print(end.is_after(start))
+    # print('Is end after start?')
+    # print(end.is_after(start))
 
-    print('Using __str__')
-    print(start, end)
+    # print('Using __str__')
+    # print(start, end)
 
-    start = Time(9, 45)
-    duration = Time(1, 35)
-    print(start + duration)
-    print(start + 1337)
-    print(1337 + start)
+    # start = Time(9, 45)
+    # duration = Time(1, 35)
+    # print(start + duration)
+    # print(start + 1337)
+    # print(1337 + start)
 
-    print('Example of polymorphism')
-    t1 = Time(7, 43)
-    t2 = Time(7, 41)
-    t3 = Time(7, 37)
-    total = sum([t1, t2, t3])
-    print(total)
+    # print('Example of polymorphism')
+    # t1 = Time(7, 43)
+    # t2 = Time(7, 41)
+    # t3 = Time(7, 37)
+    # total = sum([t1, t2, t3])
+    # print(total)
 
 
 if __name__ == '__main__':
