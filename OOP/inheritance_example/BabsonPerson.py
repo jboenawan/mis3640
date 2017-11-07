@@ -20,7 +20,7 @@ class BabsonPerson(Person):
         return (self.name + " says: " + utterance)
 
 
-# p1 = BabsonPerson('Zhi')
-# p2 = BabsonPerson('Alex')
-# p3 = BabsonPerson('Steve')
-# p4 = Person('Chris')
+# p1 = BabsonPerson('Zhi Li')
+# p2 = BabsonPerson('Alex Lim')
+# p3 = BabsonPerson('Steve Bardi')
+# p4 = Person('Chris Kennedy')
