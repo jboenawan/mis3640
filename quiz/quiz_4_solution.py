@@ -11,21 +11,32 @@ class Candidate:
         winning_states: a list of strings representing initial winning state(s).
         votes: integer, representing number of votes
         """
-        pass
+        self.name = name
+        if winning_states is None:
+            self.winning_states = []
+        else:
+            self.winning_states = winning_states
+        self.votes = votes
 
     def __str__(self):
         """Return a string representaion of this candidate,
         including name and winning state(s).
         """
-        pass
+        if len(self.winning_states) == 0:
+            return self.name + ' has not won any state yet.'
+        
+        return self.name + ' has won ' + ', '.join(self.winning_states)+'.'
 
     def win_state(self, state):
-        """Adds a state to winning_states and updates votes.
+        """Adds a tate to winning_states and update votes.
 
         state: a string of state abbreviation
         """
-        pass
+        self.winning_states.append(state)
+        self.votes += ELECTORS.get(state,0)
 
+    def __gt__(self, other):
+        return self.votes > other.votes
 
 def main():
     trump = Candidate('Donald Trump')
@@ -37,6 +48,7 @@ def main():
     trump.win_state('FL')
     trump.win_state('TX')
     clinton.win_state('MA')
+    # trump.win_state('PR')
     print(trump)
     print(clinton)
     print('Does Trump win?')

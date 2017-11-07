@@ -29,7 +29,8 @@ class City:
         if self.population == another_city.population:
             if self.gdp_per_capita == another_city.gdp_per_capita:
                 return True
-        # return False
+        return False
+        # not recommended!!!
         
 
 city1 = City()
